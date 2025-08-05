@@ -1,0 +1,986 @@
+<!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2025 Smart Attendance System. Built with modern web technologies.</p>
+        </div>
+    </footer><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+    <style>
+        /* Smooth animations and transitions */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .role-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+            margin-top: 4rem;
+        }
+
+        .role-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .main-role-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            min-width: 300px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-role-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .main-role-box:hover::before {
+            opacity: 1;
+        }
+
+        .main-role-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .role-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.4s ease;
+        }
+
+        .main-role-box:hover .role-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .role-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .role-description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .feature-boxes {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .feature-box {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transition: height 0.4s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .feature-box:hover::before {
+            height: 6px;
+        }
+
+        .feature-box h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-box h4::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .feature-box p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .step p {
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Feedback Section */
+        .feedback {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .feedback-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feedback-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .star {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .star:hover,
+        .star.active {
+            color: #ffc107;
+        }
+
+        .rating-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .checkbox-label:hover {
+            background-color: #f8f9fa;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .checkmark {
+            position: relative;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .feedback-form {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-boxes {
+                flex-direction: column;
+            }
+
+            .feature-box {
+                max-width: none;
+            }
+        }
+
+        /* Floating elements */
+        .floating-shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-shape:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">SmartAttend</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Smart Attendance System</h1>
+                <p>Revolutionizing attendance management with AI-powered face recognition technology. Seamless, accurate, and efficient for students, professors, and administrators.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" onclick="showLogin()">Get Started</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating shapes -->
+        <div class="floating-shape" style="width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+        <div class="floating-shape" style="width: 80px; height: 80px; background: rgba(255,255,255,0.1); border-radius: 20px;"></div>
+        <div class="floating-shape" style="width: 60px; height: 60px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Comprehensive Features for Everyone</h2>
+            
+            <div class="role-sections">
+                <!-- Student Section -->
+                <div class="role-section fade-in">
+                    <div class="main-role-box">
+                        <div class="role-icon">👨‍🎓</div>
+                        <h3 class="role-title">For Students</h3>
+                        <p class="role-description">Experience seamless attendance tracking with AI-powered face recognition technology designed specifically for student convenience and academic success.</p>
+                    </div>
+                    <div class="feature-boxes">
+                        <div class="feature-box">
+                            <h4>Smart Attendance Tracking</h4>
+                            <p>View comprehensive attendance records for all subjects with real-time updates and automatic calculations to keep track of your academic progress.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>AI Face Recognition</h4>
+                            <p>Effortless check-in process using advanced facial recognition technology that automatically marks your attendance without any manual intervention.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>Analytics & Insights</h4>
+                            <p>Get detailed analytics, attendance percentage calculations, and smart notifications to help you maintain excellent attendance records.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professor Section -->
+                <div class="role-section fade-in">
+                    <div class="main-role-box">
+                        <div class="role-icon">👩‍🏫</div>
+                        <h3 class="role-title">For Professors</h3>
+                        <p class="role-description">Comprehensive tools for faculty members to manage attendance, organize schedules, and maintain productivity with intuitive management features.</p>
+                    </div>
+                    <div class="feature-boxes">
+                        <div class="feature-box">
+                            <h4>Manual Attendance Control</h4>
+                            <p>Intuitive interface to manually mark and manage student attendance with flexible options for corrections and special circumstances handling.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>Smart Todo Management</h4>
+                            <p>Organize your academic tasks, assignments, and important reminders with priority-based scheduling and deadline notifications.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>Custom Timetable Builder</h4>
+                            <p>Create and manage personalized class schedules with room assignments, timing details, and easy modification capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Section -->
+                <div class="role-section fade-in">
+                    <div class="main-role-box">
+                        <div class="role-icon">👨‍💼</div>
+                        <h3 class="role-title">For Administrators</h3>
+                        <p class="role-description">Complete institutional oversight with powerful analytics, user management, and system control features for efficient administration.</p>
+                    </div>
+                    <div class="feature-boxes">
+                        <div class="feature-box">
+                            <h4>System-Wide Oversight</h4>
+                            <p>Monitor all attendance activities with comprehensive dashboards, real-time system status, and detailed institutional performance metrics.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>User Role Management</h4>
+                            <p>Efficiently manage student and faculty accounts with flexible permission controls, access management, and bulk operations support.</p>
+                        </div>
+                        <div class="feature-box">
+                            <h4>Advanced Analytics</h4>
+                            <p>Generate detailed reports, attendance patterns analysis, and institutional insights with data export capabilities for decision making.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title fade-in">How It Works</h2>
+            
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Face Registration</h3>
+                    <p>Students and staff register their facial data securely in the system</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>AI Recognition</h3>
+                    <p>Advanced face recognition technology identifies users automatically</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Smart Tracking</h3>
+                    <p>Attendance is marked automatically with real-time data processing</p>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Analytics & Reports</h3>
+                    <p>Generate comprehensive reports and insights for better management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="feedback" id="feedback">
+        <div class="container">
+            <h2 class="section-title fade-in">We Value Your Feedback</h2>
+            <p class="feedback-subtitle fade-in">Help us improve the Smart Attendance System by sharing your thoughts and suggestions</p>
+            
+            <form class="feedback-form fade-in" id="feedbackForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="role">Your Role *</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="student">Student</option>
+                            <option value="professor">Professor</option>
+                            <option value="administrator">Administrator</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="institution">Institution/Organization</label>
+                        <input type="text" id="institution" name="institution">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Feedback Category *</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select category</option>
+                        <option value="feature-request">Feature Request</option>
+                        <option value="bug-report">Bug Report</option>
+                        <option value="general-feedback">General Feedback</option>
+                        <option value="ui-ux">UI/UX Suggestions</option>
+                        <option value="performance">Performance Issues</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rating">Overall Experience Rating *</label>
+                    <div class="rating-container">
+                        <div class="stars" id="starRating">
+                            <span class="star" data-rating="1">★</span>
+                            <span class="star" data-rating="2">★</span>
+                            <span class="star" data-rating="3">★</span>
+                            <span class="star" data-rating="4">★</span>
+                            <span class="star" data-rating="5">★</span>
+                        </div>
+                        <span class="rating-text" id="ratingText">Click to rate</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject/Title *</label>
+                    <input type="text" id="subject" name="subject" placeholder="Brief title for your feedback" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Detailed Feedback *</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Please provide detailed feedback, suggestions, or describe any issues you've encountered..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="features">Which features are you most interested in?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="face-recognition">
+                            <span class="checkmark"></span>
+                            Face Recognition Technology
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="analytics">
+                            <span class="checkmark"></span>
+                            Analytics & Reports
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="mobile-app">
+                            <span class="checkmark"></span>
+                            Mobile Application
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="features" value="integrations">
+                            <span class="checkmark"></span>
+                            Third-party Integrations
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="newsletter" value="yes">
+                        <span class="checkmark"></span>
+                        Subscribe to updates about Smart Attendance System
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary submit-btn">
+                    <span class="btn-text">Submit Feedback</span>
+                    <span class="btn-loading" style="display: none;">Submitting...</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Show login modal (placeholder function)
+        function showLogin() {
+            alert('Login functionality would be implemented here. This would redirect to the authentication page where users can select their role (Student/Professor/Admin) and log in.');
+        }
+
+        // Add stagger animation to feature cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            const steps = document.querySelectorAll('.step');
+            steps.forEach((step, index) => {
+                step.style.animationDelay = `${index * 0.15}s`;
+            });
+        });
+
+        // Star rating functionality
+        const stars = document.querySelectorAll('.star');
+        const ratingInput = document.getElementById('rating');
+        const ratingText = document.getElementById('ratingText');
+        
+        const ratingTexts = {
+            1: 'Poor',
+            2: 'Fair', 
+            3: 'Good',
+            4: 'Very Good',
+            5: 'Excellent'
+        };
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.dataset.rating);
+                ratingInput.value = rating;
+                ratingText.textContent = ratingTexts[rating];
+                
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseenter', () => {
+                const rating = parseInt(star.dataset.rating);
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.style.color = '#ffc107';
+                    } else {
+                        s.style.color = '#ddd';
+                    }
+                });
+            });
+        });
+
+        document.querySelector('.stars').addEventListener('mouseleave', () => {
+            const currentRating = parseInt(ratingInput.value) || 0;
+            stars.forEach((s, index) => {
+                if (index < currentRating) {
+                    s.style.color = '#ffc107';
+                } else {
+                    s.style.color = '#ddd';
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you for your feedback! We appreciate your input and will review it carefully.');
+                
+                // Reset form
+                this.reset();
+                ratingInput.value = '';
+                ratingText.textContent = 'Click to rate';
+                stars.forEach(star => star.classList.remove('active'));
+                
+                // Reset button
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
