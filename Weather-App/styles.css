@@ -1,0 +1,154 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Theme */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #121212;
+}
+
+/* Container */
+.container {
+  background-color: #1e1e1e;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 420px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+body.light-theme .container {
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.app-title {
+  font-size: 1.8rem;
+  color: #bb86fc;
+  margin-bottom: 25px;
+}
+
+body.light-theme .app-title {
+  color: #6200ea;
+}
+
+/* Input Section */
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+#city-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2a2a2a;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+body.light-theme #city-input {
+  background-color: #eaeaea;
+  color: #121212;
+}
+
+#get-weather-btn {
+  background-color: #bb86fc;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#get-weather-btn:hover {
+  background-color: #9b5de5;
+}
+
+/* Weather Box */
+.weather-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+body.light-theme .weather-box {
+  background-color: #f0f0f0;
+}
+
+#weather-info h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+#weather-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* Error Message */
+#error-message {
+  color: #ff4d6d;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+  margin-top: 30px;
+  background-color: transparent;
+  border: 2px solid #bb86fc;
+  color: #bb86fc;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background-color: #bb86fc;
+  color: white;
+}
+
+body.light-theme .theme-btn {
+  border-color: #6200ea;
+  color: #6200ea;
+}
+
+body.light-theme .theme-btn:hover {
+  background-color: #6200ea;
+  color: white;
+}
+
+/* Hidden Utility */
+.hidden {
+  display: none;
+}
