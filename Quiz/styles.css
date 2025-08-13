@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Light & Dark mode backgrounds */
+body.light-mode {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    color: #333;
+}
+
+body.dark-mode {
+    background: linear-gradient(135deg, #232526, #414345);
+    color: #f5f5f5;
+}
+
+/* Main container */
+.container {
+    background: var(--box-bg);
+    width: 400px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: background 0.3s;
+}
+
+/* Light/Dark variable colors */
+body.light-mode .container {
+    --box-bg: #fff;
+}
+
+body.dark-mode .container {
+    --box-bg: #2c2c2c;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Title */
+.header h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Question text */
+#question-text {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Choices list */
+#choices-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#choices-list li {
+    background: #f4f4f4;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode #choices-list li {
+    background: #444;
+}
+
+#choices-list li:hover {
+    background: #dcdcdc;
+}
+
+body.dark-mode #choices-list li:hover {
+    background: #555;
+}
+
+.correct {
+    background: #4CAF50 !important;
+    color: white;
+}
+
+.incorrect {
+    background: #E53935 !important;
+    color: white;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #667eea;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #5563c1;
+}
+
+#theme-toggle {
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+/* Hide/Show elements */
+.hidden {
+    display: none;
+}
